@@ -1,2 +1,2 @@
-# cloud-course-lab
-Course repository for cloud computing practice
+# dailen-lab
+Personal repository for coursework, computer vision learning, experiments, and software projects.
