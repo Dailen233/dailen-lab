@@ -1,0 +1,57 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+
+# Node.js and frontend
+node_modules/
+dist/
+coverage/
+*.log
+
+# IDE and operating system
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Java
+*.class
+target/
+out/
+
+# C and C++
+*.o
+*.obj
+*.exe
+*.out
+.vs/
+Debug/
+Release/
+x64/
+
+# AI models and generated outputs
+*.pt
+*.pth
+*.onnx
+datasets/
+runs/
+outputs/
+
+# Archives
+*.zip
+*.rar
+*.7z
