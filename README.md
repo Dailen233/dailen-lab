@@ -6,7 +6,7 @@
 
 目前正在为华为 ICT 大赛 JobInsight 项目学习基础开发技术：
 
-- [ ] Python 基础
+- [x] Python 基础
 - [ ] FastAPI 框架
 - [ ] HTML、CSS、JavaScript 前端基础
 - [ ] 前端与 FastAPI 接口联调
@@ -34,7 +34,7 @@ learning/jobinsight-foundations/
 - [x] 创建 GitHub 代码仓库
 - [x] 配置 Ubuntu Git 开发环境
 - [x] 建立 JobInsight 基础学习目录
-- [ ] 完成 Python 基础练习
+- [x] 完成 Python 基础练习
 - [ ] 完成 FastAPI 接口练习
 - [ ] 完成前端基础练习
 - [ ] 完成前后端联调示例

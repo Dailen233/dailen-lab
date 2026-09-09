@@ -18,7 +18,22 @@
 - f-string 格式化输出
 - `main()` 程序入口
 
+### 02 JSON Storage
+
+文件：`02_json_storage.py`
+
+实现了候选人数据的 JSON 存储与读取，包含：
+
+- JSON 序列化和反序列化
+- UTF-8 中文数据保存
+- 文件读写
+- 文件不存在和 JSON 格式错误处理
+- 候选人数据循环输出
+
 ## 运行方法
 
 ```bash
 python3 01_job_match_basics.py
+python3 02_json_storage.py
+python3 -m json.tool candidates.json
+

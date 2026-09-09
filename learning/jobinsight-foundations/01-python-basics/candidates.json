@@ -1,0 +1,19 @@
+[
+  {
+    "name": "小明",
+    "target_job": "Python 后端开发",
+    "skills": [
+      "Python",
+      "Git"
+    ]
+  },
+  {
+    "name": "小红",
+    "target_job": "前端开发",
+    "skills": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ]
+  }
+]
