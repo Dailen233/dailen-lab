@@ -29,6 +29,14 @@
 - 使用 `HTTPException` 返回 404
 - 理解 200、404 和 422 状态码
 
+### 03_request_body.py
+
+- 使用 Pydantic `BaseModel` 定义请求体
+- 使用 `Field` 校验字符串和列表长度
+- 使用 POST 新增候选人
+- 使用 `model_dump()` 转换模型数据
+- 理解 201 和 422 状态码
+
 ## 运行方法
 
 激活虚拟环境：
