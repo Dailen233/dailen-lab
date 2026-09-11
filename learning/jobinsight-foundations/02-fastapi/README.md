@@ -57,6 +57,16 @@
 
 运行：`python3 05_type_hints.py`
 
+### 06：Pydantic 数据校验
+
+- 使用 BaseModel 定义候选人数据模型。
+- 理解类型解析与字段约束的区别。
+- 验证年龄范围、非法整数输入和空技能列表。
+- 使用 try/except 捕获 ValidationError。
+- 使用 model_dump() 将模型转换为字典。
+
+运行：`python 06_pydantic_validation.py`
+
 ## 运行方法
 
 激活虚拟环境：
