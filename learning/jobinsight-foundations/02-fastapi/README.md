@@ -67,6 +67,18 @@
 
 运行：`python 06_pydantic_validation.py`
 
+### 07：SQLite 数据库基础
+
+- 创建磁盘数据库和候选人表。
+- 使用参数绑定完成插入、查询、更新和删除。
+- 理解 fetchone() 与 fetchall() 的返回值。
+- 验证数据在程序结束后仍然保留。
+- 使用 commit() 提交修改、rollback() 撤销未提交的修改。
+
+运行：`python 07_sqlite_basics.py`
+
+数据库文件 candidates_learning.db 由脚本自动创建，不纳入版本控制。
+
 ## 运行方法
 
 激活虚拟环境：
