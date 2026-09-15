@@ -20,6 +20,18 @@
 - 使用 `/docs` 查看自动生成的接口文档
 - 使用 Apipost 测试接口
 
+激活虚拟环境：
+
+```bash
+source .venv/bin/activate
+```
+
+运行第一个接口：
+
+```bash
+fastapi dev 01_hello_api.py
+```
+
 ### 02_parameters.py
 
 - 路径参数 `candidate_id`
@@ -28,6 +40,16 @@
 - 使用 `Query` 校验参数范围
 - 使用 `HTTPException` 返回 404
 - 理解 200、404 和 422 状态码
+
+运行参数练习：
+
+```bash
+fastapi dev 02_parameters.py
+```
+
+接口文档：
+
+http://127.0.0.1:8000/docs
 
 ### 03_request_body.py
 
@@ -79,27 +101,40 @@
 
 数据库文件 candidates_learning.db 由脚本自动创建，不纳入版本控制。
 
-## 运行方法
+### 08：SQLAlchemy ORM 基础
 
-激活虚拟环境：
+- 将已有 candidates 表映射为 Candidate 类。
+- 使用 Session、select、where 和 get 查询数据。
+- 修改对象属性并提交，通过新会话验证保存结果。
+- 理解 flush、commit 与 rollback 的区别。
+
+运行：`python 08_sqlalchemy_basics.py`
+
+### 09：候选人数据库 CRUD API
+
+使用 FastAPI、Pydantic、SQLAlchemy 和 SQLite 实现候选人管理。
+
+| 方法    |            路径            |      功能     |
+|--------|----------------------------|--------------|
+| GET    | /candidates                | 查询候选人列表  |
+| GET    | /candidates/{candidate_id} | 查询单个候选人  |
+| POST   | /candidates                | 新增候选人     |
+| PUT    | /candidates/{candidate_id} | 更新候选人     |
+| DELETE | /candidates/{candidate_id} | 删除候选人     |
+
+首次运行且数据库不存在时，先初始化：
 
 ```bash
-source .venv/bin/activate
+python 07_sqlite_basics.py
 ```
 
-运行第一个接口：
+启动接口服务：
 
 ```bash
-fastapi dev 01_hello_api.py
+fastapi dev 09_candidate_db_api.py
 ```
 
-运行参数练习：
+接口文档：http://127.0.0.1:8000/docs
 
-```bash
-fastapi dev 02_parameters.py
-```
-
-接口文档：
-
-http://127.0.0.1:8000/docs
-
+已通过 Apipost 验证新增、查询、更新、删除及不存在记录的错误响应。
+数据库文件由本地运行生成，不纳入版本控制。
