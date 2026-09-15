@@ -138,3 +138,15 @@ fastapi dev 09_candidate_db_api.py
 
 已通过 Apipost 验证新增、查询、更新、删除及不存在记录的错误响应。
 数据库文件由本地运行生成，不纳入版本控制。
+
+### 10：响应模型
+
+- 区分请求模型、ORM 模型和响应模型。
+- 使用 response_model 声明单人、列表和删除响应结构。
+- 验证额外返回字段会被过滤。
+- 在 /docs 中查看响应模型。
+- 理解请求校验失败与响应校验失败的区别。
+
+运行：`fastapi dev 10_response_model.py`
+
+使用第 07 节创建的 candidates_learning.db。
