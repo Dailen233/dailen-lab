@@ -183,3 +183,13 @@ python -m uvicorn candidate_app.main:app --reload
 ```
 
 使用第 07 节创建的 candidates_learning.db。
+
+### 13：候选人筛选与分页
+
+- 使用 target_job 按岗位模糊筛选。
+- 使用 offset 和 limit 实现数据库分页。
+- 总数统计与明细查询使用相同筛选条件。
+- total 表示分页前的匹配总数，data 表示当前页数据。
+- 验证正常分页、岗位筛选、超出范围的分页及非法 limit。
+
+实现位置：candidate_app/routers/candidates.py

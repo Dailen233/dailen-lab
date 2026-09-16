@@ -1,5 +1,5 @@
-from fastapi import APIRouter, HTTPException
-from sqlalchemy import select
+from fastapi import APIRouter, HTTPException, Query
+from sqlalchemy import select, func
 
 from candidate_app.database import SessionDep
 from candidate_app.models import Candidate
@@ -22,17 +22,40 @@ def candidate_to_dict(candidate: Candidate) -> dict:
 
 
 @router.get("/candidates", response_model=CandidateListResponse)
-def get_candidates(session: SessionDep):
-    statement = select(Candidate).order_by(Candidate.id)
+def get_candidates(
+    session: SessionDep,
+    target_job: str | None = None,
+    offset: int = Query(default=0, ge=0),
+    limit: int = Query(default=10, ge=1, le=50)
+):
+    statement = select(Candidate)
+    count_statement = select(func.count()).select_from(Candidate)
+
+    if target_job is not None:
+        condition = Candidate.target_job.like(f"%{target_job}%")
+
+        statement = statement.where(condition)
+        count_statement = count_statement.where(condition)
+
+    total = session.scalar(count_statement)
+
+    statement = (
+        statement
+        .order_by(Candidate.id)
+        .offset(offset)
+        .limit(limit)
+    )
+
     candidates = session.scalars(statement).all()
 
     return {
-        "total": len(candidates),
+        "total": total,
         "data": [
             candidate_to_dict(candidate)
             for candidate in candidates
         ]
     }
+
 
 
 @router.get(
