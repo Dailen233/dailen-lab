@@ -150,3 +150,14 @@ fastapi dev 09_candidate_db_api.py
 运行：`fastapi dev 10_response_model.py`
 
 使用第 07 节创建的 candidates_learning.db。
+
+### 11：依赖注入与数据库会话
+
+- 使用 get_session() 统一管理 Session 的创建和关闭。
+- 使用 yield 提供会话，并在依赖清理时释放资源。
+- 使用 Annotated 和 Depends 声明 SessionDep。
+- 五个 CRUD 接口通过参数接收会话。
+- 写入操作仍由接口显式提交事务。
+- 已验证新增、更新、查询、删除及删除后的查询。
+
+运行：`fastapi dev 11_dependencies.py`
