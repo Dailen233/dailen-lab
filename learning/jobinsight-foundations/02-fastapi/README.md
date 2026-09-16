@@ -161,3 +161,25 @@ fastapi dev 09_candidate_db_api.py
 - 已验证新增、更新、查询、删除及删除后的查询。
 
 运行：`fastapi dev 11_dependencies.py`
+
+
+### 12：多文件项目结构
+
+将单文件 API 拆分为 candidate_app 包：
+
+- database.py：数据库连接、ORM 基类和会话依赖。
+- models.py：ORM 模型。
+- schemas.py：请求与响应模型。
+- routers/candidates.py：候选人 CRUD 路由。
+- main.py：创建 FastAPI 应用并注册路由。
+
+使用 APIRouter 组织接口，使用 include_router 注册到应用。
+已验证多文件版本的列表查询、单人查询和不存在记录的响应。
+
+在 02-fastapi 目录启动：
+
+```bash
+python -m uvicorn candidate_app.main:app --reload
+```
+
+使用第 07 节创建的 candidates_learning.db。
