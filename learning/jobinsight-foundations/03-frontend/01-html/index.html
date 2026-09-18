@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobInsight 学习</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page">
+        <h1>候选人管理</h1>
+        <p>这是我的第一个前端页面。</p>
+
+        <h2>候选人表格</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>编号</th>
+                    <th>姓名</th>
+                    <th>目标岗位</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+
+            <tbody id="candidate-table-body"></tbody>
+        </table>
+
+        <h2>学习目标</h2>
+        <ul>
+            <li>学习HTML</li>
+            <li>学习CSS</li>
+            <li>学习JavaScript</li>
+        </ul>
+
+        <h2>常用入口</h2>
+        <p>
+            <a href="http://127.0.0.1:8000/docs">查看后端接口文档</a>
+        </p>
+
+        <h2 class="highlight">新增候选人</h2>
+
+        <form class="candidate-form">
+            <p class="highlight">请填写候选人信息。</p>
+            <p class="form-row">
+                <label for="candidate-name">姓名：</label>
+                <input id="candidate-name" type="text" name="name">
+            </p>
+            <p class="form-row">
+                <label for="candidate-job">目标岗位:</label>
+                <input id="candidate-job" type="text" name="target_job">
+            </p>
+
+            <button type="button" class="submit-button" id="add-candidate">
+                新增候选人
+            </button>
+
+            <p id="candidate-preview">尚未填写候选人信息。</p>
+        </form>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

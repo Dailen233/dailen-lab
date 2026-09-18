@@ -1,0 +1,81 @@
+body {
+    font-family: sans-serif;
+    background-color: #f5f7fa;
+    color: #333333;
+}
+
+h1 {
+    color: #2563eb;
+}
+
+h2 {
+    color: green;
+}
+
+p {
+    font-size: 16px;
+}
+
+.highlight {
+    color: #c2410c;
+}
+
+.candidate-form {
+    background-color: white;
+    padding: 40px;
+    border: 1px solid #cccccc;
+    margin-top: 24px;
+}
+
+
+table {
+    border-collapse: collapse;
+    background-color: white;
+}
+
+th,
+td {
+    border: 1px solid #cccccc;
+    padding: 10px 16px;
+    text-align: left;
+}
+
+th {
+    background-color: #e8eef8;
+}
+
+.page {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.form-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.form-row label {
+    width: 80px;
+    flex-shrink: 0;
+}
+
+.form-row input {
+    padding: 8px 12px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+}
+
+.submit-button {
+    background-color: #2563eb;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #1d4ed8;
+}
