@@ -193,3 +193,47 @@ python -m uvicorn candidate_app.main:app --reload
 - 验证正常分页、岗位筛选、超出范围的分页及非法 limit。
 
 实现位置：candidate_app/routers/candidates.py
+
+## AI 学习建议接口
+
+已新增：
+
+- `candidate_app/llm_service.py`：组织模型请求并提取回答
+- `candidate_app/routers/ai.py`：提供 AI 学习建议接口
+
+接口：`POST /ai/study-advice`
+
+请求示例：
+
+```json
+{
+  "target_job": "Python 后端开发"
+}
+```
+
+响应包含 `target_job` 和 `advice`。
+
+前端只提交目标岗位。后端读取环境变量中的 API Key，
+组织提示词并调用学院模型接口。当前没有将学习建议写入数据库。
+
+## 配置和启动
+
+在本目录中激活后端虚拟环境，并安装模型调用依赖：
+
+```bash
+source .venv/bin/activate
+python -m pip install httpx
+```
+
+在同一个 Bash 终端中设置密钥并启动：
+
+```bash
+read -rsp "请输入学院 API Key: " SCHOOL_LLM_API_KEY
+echo
+export SCHOOL_LLM_API_KEY
+
+python -m uvicorn candidate_app.main:app --reload
+```
+
+密钥输入时不显示。新开终端后，如需启动 AI 功能，应重新设置环境变量。
+前后端联调时，前端访问地址须包含在后端 CORS 允许来源中。
