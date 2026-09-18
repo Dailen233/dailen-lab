@@ -19,3 +19,13 @@ class CandidateListResponse(BaseModel):
 class CandidateDeleteResponse(BaseModel):
     message: str
     data: CandidateResponse
+
+
+class StudyAdviceInput(BaseModel):
+    target_job: str = Field(min_length=1, max_length=50)
+
+
+class StudyAdviceResponse(BaseModel):
+    target_job: str
+    advice: str
+
