@@ -36,3 +36,24 @@ npm run dev
 ```sh
 npm run build
 ```
+## 已完成的学习与练习
+
+- 响应式数据：ref、reactive、toRefs
+- 计算与侦听：computed、watch、watchEffect
+- 组件拆分与通信：props、emit
+- 生命周期：onMounted、onUnmounted
+- 条件渲染：v-if 与 v-show
+- 跨层级数据传递：provide、inject、readonly
+- Vue Router：路由配置、RouterLink、RouterView
+- 验证页面切换时的组件卸载、重建与草稿重置
+
+## 页面入口
+
+- /candidates：候选人管理与组件练习
+- /learning：学习说明
+
+## 数据保存说明
+
+- 草稿保存在组件内存中，目前切换离开候选人页面后会重置。
+- 已写入数据库的候选人可以通过后端接口重新加载。
+
