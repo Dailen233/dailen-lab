@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from candidate_app.routers import ai
+from candidate_app.routers import ai, practice
 from candidate_app.routers.candidates import router as candidates_router
 
 
@@ -20,3 +20,4 @@ app.add_middleware(
 
 app.include_router(candidates_router)
 app.include_router(ai.router)
+app.include_router(practice.router)

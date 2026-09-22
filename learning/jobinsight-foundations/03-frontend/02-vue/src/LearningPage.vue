@@ -1,3 +1,9 @@
+<script setup>
+import { ref } from 'vue';
+
+const inputText = ref("");
+</script>
+
 <template>
     <section class="learning-page">
         <h1>学习说明：构建测试</h1>
@@ -9,6 +15,15 @@
             <li>组件练习：响应式数据、组件通信和生命周期。</li>
             <li>AI 功能：通过后端生成学习建议。</li>
         </ul>
+
+        <h2>文本显示练习</h2>
+
+        <label>
+            输入内容：
+            <input v-model="inputText">
+        </label>
+
+        <p>显示结果：{{ inputText }}</p>
     </section>
 </template>
 

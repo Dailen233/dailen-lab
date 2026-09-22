@@ -1,6 +1,8 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, ConfigDict
 
 class CandidateInput(BaseModel):
+    model_config = ConfigDict(str_strip_whitespace=True)
+
     name: str = Field(min_length=1, max_length=30)
     target_job: str = Field(min_length=1, max_length=50)
 
@@ -22,6 +24,8 @@ class CandidateDeleteResponse(BaseModel):
 
 
 class StudyAdviceInput(BaseModel):
+    model_config = ConfigDict(str_strip_whitespace=True)
+
     target_job: str = Field(min_length=1, max_length=50)
 
 

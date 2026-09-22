@@ -1,5 +1,8 @@
+import logging
+
 from fastapi import APIRouter, HTTPException, Query
 from sqlalchemy import select, func
+from sqlalchemy.exc import SQLAlchemyError
 
 from candidate_app.database import SessionDep
 from candidate_app.models import Candidate
@@ -12,6 +15,8 @@ from candidate_app.schemas import (
 
 
 router = APIRouter(tags=["候选人"])
+
+logger = logging.getLogger(__name__)
 
 def candidate_to_dict(candidate: Candidate) -> dict:
     return {
@@ -85,9 +90,29 @@ def create_candidate(data: CandidateInput, session: SessionDep):
         target_job=data.target_job
     )
 
-    session.add(candidate)
-    session.commit()
-    session.refresh(candidate)
+    try:
+        session.add(candidate)
+        session.commit()
+    except SQLAlchemyError as error:
+        logger.exception("新增候选人：数据库提交阶段异常")
+        session.rollback()
+
+        raise HTTPException(
+            status_code=500,
+            detail="候选人保存异常，请先查询列表确认结果。"      
+        ) from error
+
+    try:
+        session.refresh(candidate)
+
+    except SQLAlchemyError as error:
+        logger.exception("新增候选人：提交成功后读取结果异常")
+        session.rollback()
+
+        raise HTTPException(
+            status_code=500,
+            detail="候选人已保存，但读取结果失败，请刷新列表确认。"
+        ) from error
 
     return candidate_to_dict(candidate)
 
