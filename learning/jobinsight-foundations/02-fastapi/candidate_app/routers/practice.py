@@ -75,4 +75,3 @@ def use_resource(
         )
 
     return {"resource": resource}
-

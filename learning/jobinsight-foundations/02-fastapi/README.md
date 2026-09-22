@@ -257,4 +257,3 @@ python -m uvicorn candidate_app.main:app --reload
 注意：
 - 模拟 Session 测试验证的是函数处理逻辑，不代表真实数据库故障测试。
 - commit 成功后，即使 refresh 失败，也不能通过 rollback 撤销此前已提交的数据。
-

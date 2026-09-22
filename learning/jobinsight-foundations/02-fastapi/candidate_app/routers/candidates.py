@@ -158,4 +158,3 @@ def delete_candidate(candidate_id: int, session: SessionDep):
         "message": "候选人删除成功",
         "data": deleted_data
     }
-
