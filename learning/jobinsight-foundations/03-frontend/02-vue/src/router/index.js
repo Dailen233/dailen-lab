@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 
 import CandidatePage from "../CandidatePage.vue";
 import LearningPage from "../LearningPage.vue";
+import StatisticsPage from "../StatisticsPage.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -18,6 +19,10 @@ const router = createRouter({
         {
             path: "/learning",
             component: LearningPage
+        },
+        {
+            path: "/statistics",
+            component: StatisticsPage
         }
     ]
 });

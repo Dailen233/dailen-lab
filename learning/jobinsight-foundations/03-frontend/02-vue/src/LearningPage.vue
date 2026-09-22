@@ -1,6 +1,6 @@
 <template>
     <section class="learning-page">
-        <h1>学习说明</h1>
+        <h1>学习说明：构建测试</h1>
 
         <p>这个项目用于练习 Vue、FastAPI 和数据库联调。</p>
 

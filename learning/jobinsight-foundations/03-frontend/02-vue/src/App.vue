@@ -6,6 +6,7 @@ import { RouterLink, RouterView } from "vue-router";
     <nav class="navigation">
         <RouterLink to="/candidates">候选人管理</RouterLink>
         <RouterLink to="/learning">学习说明</RouterLink>
+        <RouterLink to="/statistics">岗位统计</RouterLink>
     </nav>
 
     <RouterView />
