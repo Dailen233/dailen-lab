@@ -1,5 +1,9 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
+import {
+  currentUser,
+  clearSession,
+} from "./stores/practiceAuth.js";
 </script>
 
 <template>
@@ -7,8 +11,24 @@ import { RouterLink, RouterView } from "vue-router";
         <RouterLink to="/candidates">候选人管理</RouterLink>
         <RouterLink to="/learning">学习说明</RouterLink>
         <RouterLink to="/statistics">岗位统计</RouterLink>
+        <RouterLink to="/practice">综合练习</RouterLink>
     </nav>
 
+
+    <div class="session-bar">
+        <template v-if="currentUser">
+            <span>
+            当前用户：{{ currentUser.name }}
+            （{{ currentUser.username }}）
+            </span>
+
+            <button type="button" @click="clearSession">
+            退出登录
+            </button>
+        </template>
+
+        <span v-else>当前未登录</span>
+    </div>
     <RouterView />
 </template>
 

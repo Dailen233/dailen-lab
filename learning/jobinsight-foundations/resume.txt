@@ -1,0 +1,4 @@
+姓名：小明
+求职方向：Python 后端开发
+技能：Python、FastAPI、Vue
+项目经历：候选人管理系统
